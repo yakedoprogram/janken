@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>じゃんけんwithおれ</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div style="text-align: center;">
+        <h1>相手</h1>
+    <h2><span id="number"></span></h2>
+    <br>
+    <h1>自分</h1>
+    <h2><span id="mynum"></span></h2>
+    <br>
+    <h1><span id="result"></span></h1>
+    </div>
+    <a href="index.html" class="btn">戻る</a>
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const type = urlParams.get('hand')-1;
+        const min = 1;
+        const max = 3;
+        const randNum = (Math.floor(Math.random() * (max - min + 1)) + min)-1;
+        let hand = "";
+        let res = "";
+        let win = "";
+        switch((type-randNum+3) % 3)
+        {
+            case 0:
+                win="あいこ";
+            break;
+            case 1:
+                win="勝ち";
+            break;
+            case 2:
+                win="負け";
+            break;
+        }
+
+
+        function numToHand(h){
+            switch(h)
+            {
+                case 0:
+                    res="✊"
+                break;
+                case 1:
+                    res="✌"
+                break;
+                case 2:
+                    res="✋"
+                break;
+            }
+            return res;
+        }
+        document.getElementById('number').textContent = numToHand(randNum);
+        document.getElementById('mynum').textContent = numToHand(type);
+        document.getElementById('result').textContent = win;
+    </script>
+</body>
+</html>

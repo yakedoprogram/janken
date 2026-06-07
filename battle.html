@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+ 
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>じゃんけんwithおれ</title>
+  <div style="text-align: center;">
+  <h1>何の手出すの</h1>
+  </div>
+  <style>
+    .fade-in {
+      animation: fadeIn 1.5s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* デモ用のスタイル */
+    .box {
+      width: 300px;
+      padding: 40px;
+      margin: 50px auto;
+      color: rgb(97, 25, 69);
+      border-radius: 10px;
+      text-align: center;
+      font-size: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="box fade-in">
+    ふわっと現れます
+  </div>
+   <div style="text-align: center;">
+  <a href="result.html?hand=1" class="btn">グー</a>
+  <br>
+  <a href="result.html?hand=2" class="btn">チョキ</a>
+  <br>
+  <a href="result.html?hand=3" class="btn">パー</a>
+</div>
+</body>
+</html>
